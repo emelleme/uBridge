@@ -1,17 +1,13 @@
 <?php
 
 global $project;
-$project = 'mysite';
+$project = 'mobilesite';
 
-global $databaseConfig;
-$databaseConfig = array(
-	"type" => 'MySQLDatabase',
-	"server" => 'localhost',
-	"username" => 'root',
-	"password" => 'd3v-ppd',
-	"database" => 'mobile_dev',
-	"path" => '',
-);
+global $database;
+$database = 'mobile_dev';
+ 
+// Use _ss_environment.php file for configuration
+require_once("conf/ConfigureFromEnv.php");
 
 MySQLDatabase::set_connection_charset('utf8');
 
@@ -22,7 +18,8 @@ Security::setDefaultAdmin("admin","password1");
 
 Director::set_environment_type("dev");
 
-Director::addRules(50, array('callback/$Action/$ID' => 'Page_Controller'));
+#Director::addRules(50, array('contacts/$Department/$Type/$Value' => 'ContactsController'));
+
 // Set the site locale
 i18n::set_locale('en_US');
 
