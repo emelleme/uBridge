@@ -100,7 +100,7 @@ height: 600px; }
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">Sexting App</a>
+          <a class="brand" href="#">Mobile App</a>
           
         </div>
       </div>
@@ -133,7 +133,7 @@ chilren under 13.</p>
       </div>
 
       <footer>
-        <p>&copy; Phatapps 2011</p>
+        <p>&copy; 2011</p>
       </footer>
 $Form
     </div> <!-- /container -->
