@@ -1,19 +1,8 @@
-<div class="typography">
-	<% if Menu(2) %>
-		<% include SideBar %>
-		<div id="Content">
-	<% end_if %>
 
-	<% if Level(2) %>
-	  	<% include BreadCrumbs %>
-	<% end_if %>
-	
-		<h2>$Title</h2>
-	
-		$Content
-		$Form
-		$PageComments
-	<% if Menu(2) %>
-		</div>
-	<% end_if %>
-</div>
+	<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
+			<li data-icon="plus"><a href="map/stations">Nearest Police Station</a></li>
+			<li data-icon="star"><a href="map/districts">Find My District</a></li>
+			<li data-icon="arrow-r"><a href="forms/tips">Submit a Tip</a></li>
+			<li data-icon="arrow-r"><a href="media/videos/surveillance">View Surveillance Videos</a></li>
+			<li data-icon="grid"><a href="contact/directory">Contact Directory</a></li>
+		</ul>

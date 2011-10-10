@@ -9,14 +9,15 @@
     $MetaTags(false)
 		
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
     <% require themedCSS(phillymobile) %>
 
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+    <% require javascript(http://code.jquery.com/jquery-1.6.4.min.js) %>
+    <% require javascript(mobilesite/javascript/page.js) %>
+    <% require javascript(http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js) %>
  	</head>
 <body>
-    <div data-role="page">
+    <div data-role="page" data-theme="b">
       <div data-role="header" id="Header">
         <h1>PhillyPolice Mobile</h1>
       </div><!-- /header -->

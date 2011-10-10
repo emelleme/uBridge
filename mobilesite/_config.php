@@ -18,8 +18,11 @@ Security::setDefaultAdmin("admin","password1");
 
 Director::set_environment_type("dev");
 
-#Director::addRules(50, array('contacts/$Department/$Type/$Value' => 'ContactsController'));
-
+/* URL Rules for Map View */
+Director::addRules(50, array('map/$Action/$ID' => 'Maps_Controller'));
+Director::addRules(50, array('contact/$Action/$Division/$Query' => 'Contacts_Controller'));
+Director::addRules(50, array('media/$Action/$ID' => 'Media_Controller'));
+Director::addRules(50, array('forms/$Action/$ID' => 'Forms_Controller'));
 // Set the site locale
 i18n::set_locale('en_US');
 
