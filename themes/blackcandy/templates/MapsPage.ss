@@ -31,25 +31,8 @@
     <% require javascript(mobilesite/javascript/maps.js) %>
  	</head>
 <body>
-    <div data-role="page" data-theme="b">
-      <div data-role="header" id="Header">
-        <h1>PhillyPolice Mobile</h1>
-      </div><!-- /header -->
-
-      <div data-role="content" id="Layout"> 
-        $Layout    
-      </div><!-- /content -->
+    <div id="gmap" data-role="page" data-theme="b">
       
-      <div data-role="footer" id="Footer">
-          <h4>&copy; 2011.</h4>
-      </div><!-- /footer -->
- 
-  </div><!-- /page -->
-  
-  <div id="gmap" data-role="page" data-theme="b">
-      <div data-role="header" id="Header">
-        <h1>PhillyPolice Map Search</h1>
-      </div><!-- /header -->
       <div data-role="content">	
 		<div data-role="fieldcontain">
 			

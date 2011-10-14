@@ -26,5 +26,8 @@ Director::addRules(50, array('forms/$Action/$ID' => 'Forms_Controller'));
 // Set the site locale
 i18n::set_locale('en_US');
 
+LeftAndMain::setApplicationName("Emelle.me CMS");
+LeftAndMain::set_loading_image('http://dev.emelle.me/assets/images/Logo.loading.png','height:100px;width:584px');
+LeftAndMain::setLogo('http://dev.emelle.me/assets/images/minilogo.png','height:33px;width:227px');
 // enable nested URLs for this site (e.g. page/sub-page/)
 SiteTree::enable_nested_urls();
