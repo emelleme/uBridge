@@ -2,4 +2,47 @@
 
 #Header {
   padding: 10px 0 10px 0;
+  background-image: url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-color: #222;
+  text-indent: -9999px;
+  border: 0;
 }
+
+#MainMenu li {
+	background: #fff;
+	opacity: 1;
+	color: #999;
+}
+
+#Layout {
+	background-color: #222;
+	background-image: url(../images/blackspecks.gif);
+}
+
+#TweetBox {
+	background: #1C415B;
+	color: white;
+	text-shadow: none;
+	padding: 10px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #999;
+}
+
+#TweetBox h3 {
+	font-size: 1.2em;
+	margin: 0;
+}
+
+#TweetBox p {
+	color: #ccc;
+	font-size: 0.8em;
+	padding: 0; 
+	margin: 0;
+}
+
+#TweetBox p strong {
+	color: #fff;
+}
+
+
