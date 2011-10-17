@@ -14,16 +14,17 @@
     <script type="text/javascript"
     src="http://maps.googleapis.com/maps/api/js?sensor=true">
 	</script>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js">
 	<style type="text/css">
 		  html { height: 100% }
 		  body { height: 100%; margin: 0; padding: 0 }
 		  #map_canvas { height: 800px; }
 		</style>
     <% require themedCSS(phillymobile) %>
-
-    <% require javascript(http://code.jquery.com/jquery-1.6.4.min.js) %>
     
-    <% require javascript(http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js) %>
+    
     <% require javascript(mobilesite/javascript/jquery.ui.map.js) %>
     <% require javascript(mobilesite/javascript/jquery.ui.map.min.js) %>
     <% require javascript(mobilesite/javascript/jquery.ui.map.services.js) %>
