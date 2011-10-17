@@ -10,35 +10,68 @@
 }
 
 #MainMenu li {
-	background: #fff;
+	background-color: #fff;
 	opacity: 1;
 	color: #999;
+	padding: 0 0 20px 40px;
+	height: 30px;
+	background-position: 10px 5px;
+	background-repeat: no-repeat;
+}
+
+#MainMenu li#NearestStation {
+	background-image: url(../images/icon_nearestpolicestation.png);
+}
+
+#MainMenu li#FindMyDistrict {
+	background-image: url(../images/icon_findmydistrict.png);
+}
+
+#MainMenu li#SubmitTip {
+	background-image: url(../images/icon_submitatip.png);
+}
+
+#MainMenu li#Surveillance {
+	background-image: url(../images/icon_surveillancevideos.png);
+}
+
+#MainMenu li#ContactDirectory {
+	background-image: url(../images/icon_contactdirectory.png);
 }
 
 #Layout {
 	background-color: #222;
-	background-image: url(../images/blackspecks.gif);
+	background-image: url(../images/grungebackseamless.jpg);
 }
 
 #TweetBox {
 	background: #1C415B;
+	opacity: 0.95;
 	color: white;
 	text-shadow: none;
 	padding: 10px;
-	-webkit-border-radius: 5px;
+	-webkit-border-radius: 10px;
 	border: 1px solid #999;
 }
 
 #TweetBox h3 {
 	font-size: 1.2em;
 	margin: 0;
+	position: relative;
+	top: -25px; left: -15px;
+}
+
+#TweetBox h3:before {
+	content: url(../images/twitterbird.png);
+	position: relative;
+	top: 5px; left: 5px;
 }
 
 #TweetBox p {
 	color: #ccc;
 	font-size: 0.8em;
 	padding: 0; 
-	margin: 0;
+	margin: -15px 0 0 0;
 }
 
 #TweetBox p strong {
