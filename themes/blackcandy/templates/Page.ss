@@ -47,29 +47,60 @@
  
   </div><!-- /page -->
   
-  <div id="gmap" data-role="page" data-theme="b">
+  <div id="gmap" data-role="page" data-theme="b" data-add-back-btn="false">
       <div data-role="header" id="Header">
-        <h1>PhillyPolice Map Search</h1>
+        <h1>PhillyPolice Mobile</h1>
       </div><!-- /header -->
-      <div data-role="content">	
-		<div data-role="fieldcontain">
-			
-			<input type="search" name="password" id="search" value="" />
-			<div><fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain"> 
-				 	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-				 	<label for="radio-choice-1">Show District</label>
+      
+      <div id="PageTitle">
+      	<h2>Find My District</h2>
+      </div>
 
-				 	<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
-				 	<label for="radio-choice-2">Nearest Station</label>
-			</fieldset></div>
-		</div>
-		
-		<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
-			<div id="map_canvas" style="height:300px;"></div>
-		</div>
-		
- 	</div><!-- content -->
- 
+      <div id="DistrictSearch">	
+          <input type="text" name="StreetOrZipCode" id="StreetOrZipCode" value="Street Address or Zip Code" />
+          <!-- <button type="submit" id="SearchSubmit">go</button> -->
+     	</div>
+
+      <div id="map_canvas" style="height:300px;"></div>
   </div><!-- /page -->
+
+
+
+
+  <div id="tip" data-role="page" data-theme="b" data-add-back-btn="false">
+      <div data-role="header" id="Header">
+        <h1>PhillyPolice Mobile</h1>
+      </div><!-- /header -->
+      
+      <div id="PageTitle">
+        <h2>Submit a Tip</h2>
+      </div>
+
+      <div class="BlankPage"> 
+          <p>Use this electronic form to submit information regarding suspicious, nuisance and criminal activity to the Philadelphia Police Department. You can submit a tip anonymously.</p>
+          <p>If you are reporting a crime in progress, or require emergency service, please dial 9-1-1 now.</p>
+          <p>To submit a tip via phone, diail 215.686.TIPS(8477).</p>
+          <div id="TipForm">
+            <label for="subject">Subject <strong>*</strong></label>
+            <input type="text" name="subject" id="subject" value="" />
+
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" value="" />
+
+            <label for="message">Tip or Message:</label>
+            <textarea name="message" id="message"></textarea>
+
+            <input type="checkbox" name="contactme" id="contactme" data-theme="c" />
+            <label for="contactme" class="lowerCase">check this box if you wish to be contacted</label>
+
+            <button type="submit" id="TipSubmit" data-theme="a">submit</button>
+
+          </div>
+      </div>
+
+     
+  </div><!-- /page -->
+
+
 </body>
 </html>

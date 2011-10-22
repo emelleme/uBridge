@@ -8,7 +8,7 @@
 <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="MainMenu">
 	<li data-icon="arrow-r" id="NearestStation"><a href="map/stations">Nearest Police Station</a></li>
 	<li data-icon="arrow-r" id="FindMyDistrict"><a href="gmap">Find My District</a></li>
-	<li data-icon="arrow-r" id="SubmitTip"><a href="forms/tips">Submit a Tip</a></li>
+	<li data-icon="arrow-r" id="SubmitTip"><a href="tip">Submit a Tip</a></li>
 	<li data-icon="arrow-r" id="Surveillance"><a href="media/videos/surveillance">View Surveillance Videos</a></li>
-	<li data-icon="arrow-r" id="ContactDirectory"><a href="contact/directory">Contact Directory</a></li>
+	<li data-icon="arrow-r" id="ContactDirectory"><a href="contact">Contact Directory</a></li>
 </ul>

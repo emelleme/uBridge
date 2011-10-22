@@ -42,6 +42,7 @@
 #Layout {
 	background-color: #222;
 	background-image: url(../images/grungebackseamless.jpg);
+	padding: 10px;
 }
 
 #TweetBox {
@@ -76,6 +77,82 @@
 
 #TweetBox p strong {
 	color: #fff;
+}
+
+#PageTitle {
+	background-image: url(../images/pagetitleback.jpg);
+	background-repeat: repeat-x;
+	padding: 2px 0 0 5px;
+	height: 30px;
+}
+
+#PageTitle h2 {
+	color: white;
+	text-shadow: none;
+	margin: 0;
+	font-size: 1.2em;
+	padding: 0 0 0 40px;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+
+.BlankPage {
+	background: #fff;
+	padding: 5px;
+}
+
+#Footer {
+	background: #1C415B;
+	border-bottom: 0;
+}
+
+
+/*** District search ***/
+
+#gmap h2 {
+	background-image: url(../images/icon_findmydistrict.png);
+}
+
+#DistrictSearch {
+	padding: 10px;
+}
+
+#DistrictSearch .ui-input-text {
+	width: 90%;
+	background: #fff;
+	display: inline-block;
+}
+
+#DistrictSearch .ui-btn  {
+	display: inline-block;	
+}
+
+/** Submit a Tip **/
+#tip h2 {
+	background-image: url(../images/icon_submitatip.png);
+}
+
+#tip p {
+	font-size: 11px;
+}
+
+#TipForm label {
+	text-transform: uppercase;
+}
+
+#TipForm label.lowerCase {
+	text-transform: lowercase;
+	font-size: 11px;
+}
+
+
+#TipForm label strong {
+	color: red;
+	font-weight: bold;
+}
+
+#TipForm input, #TipForm textarea {
+	background: #fff;
 }
 
 
