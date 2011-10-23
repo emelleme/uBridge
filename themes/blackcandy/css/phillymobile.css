@@ -155,4 +155,28 @@
 	background: #fff;
 }
 
+/** surveillance videos **/
+
+#surveillance h2 {
+	background-image: url(../images/icon_surveillancevideos.png);
+}
+
+#SurveillanceVideoList li {
+	background: #fff;
+}
+
+#SurveillanceVideoList a {
+	white-space: normal;	
+}
+
+#SurveillanceVideoList li img {
+	margin: 10px 10px 0 10px;
+}
+
+#SurveillanceVideoList li a em {
+	color: #ccc;
+	font-size: 13px;
+	font-style: normal;
+	display: block;
+}
 

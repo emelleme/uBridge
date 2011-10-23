@@ -97,9 +97,34 @@
 
           </div>
       </div>
-
      
   </div><!-- /page -->
+
+  <div id="surveillance" data-role="page" data-add-back-btn="false">
+      <div data-role="header" id="Header">
+        <h1>PhillyPolice Mobile</h1>
+      </div><!-- /header -->
+        
+      <div id="PageTitle">
+        <h2>View Surveillance Videos</h2>
+      </div>
+
+      <div class="BlankPage"> 
+        <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="SurveillanceVideoList">
+          <li data-icon="arrow-r">
+            <img src="themes/blackcandy/images/video_thumb_sample.jpg" alt="Surveillance video" />
+            <a href="sd">Pizza Store Robberies <em>September 20, 2011</em></a>
+          </li>
+
+          <li data-icon="arrow-r">
+            <img src="themes/blackcandy/images/video_thumb_sample.jpg" alt="Surveillance video" />
+            <a href="sd">Robbery at Metro PCS 3712 N Broad <em>September 9, 2011</em></a>
+          </li>
+
+        </ul>
+      </div>
+
+  </div> <!-- page -->
 
 
 </body>
