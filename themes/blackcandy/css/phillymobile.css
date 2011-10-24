@@ -106,25 +106,47 @@
 	border-bottom: 0;
 }
 
-
-/*** District search ***/
-
-#gmap h2 {
-	background-image: url(../images/icon_findmydistrict.png);
-}
-
-#DistrictSearch {
+.SearchContainer {
 	padding: 10px;
 }
 
-#DistrictSearch .ui-input-text {
+.SearchContainer .ui-input-text {
 	width: 90%;
 	background: #fff;
 	display: inline-block;
 }
 
-#DistrictSearch .ui-btn  {
+.SearchContainer .ui-input-search {
+	background-color: #fff;
+}
+
+.SearchContainer .ui-btn  {
 	display: inline-block;	
+}
+
+#SearchFieldSet .ui-block-a {
+	width: 75%;
+}
+
+#SearchFieldSet .ui-block-b {
+	width: 36px;
+	max-width: 25%;
+}
+
+#SearchFieldSet .ui-block-b img {
+	vertical-align: middle;
+	margin: 5px 0 0 10px;
+}
+
+#SearchFieldSet label.ui-hidden-accessible {
+	display: none;
+}
+
+
+/*** District search ***/
+
+#gmap h2 {
+	background-image: url(../images/icon_findmydistrict.png);
 }
 
 /** Submit a Tip **/
@@ -180,3 +202,22 @@
 	display: block;
 }
 
+/** Nearest stations **/
+#stations h2 {
+	background-image: url(../images/icon_nearestpolicestation.png);
+}
+
+/*** contact **/
+#contact h2 {
+	background-image: url(../images/icon_contactdirectory.png);
+}
+
+#ContactList h4 {
+	font-size: 13px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#ContactList p {
+	margin: 0 0 15px 0;
+}
