@@ -167,6 +167,9 @@
       <div data-role="content">
 
         <div data-role="collapsible-set" data-theme="d" data-content-theme="b" id="ContactList">
+          
+          <div data-role="list-divider" data-theme="d">Uniform Patrol</div>          
+          
           <div data-role="collapsible" data-theme="d" data-content-theme="b">
             <h3>1st District</h3>
             <div class="AddressBlock">
@@ -221,6 +224,9 @@
             </div>
           </div>
         </div>
+
+        <div data-role="list-divider" data-theme="d">Investigative Units</div>
+        <div data-role="list-divider" data-theme="d">Administrative Services</div>
 
     </div> <!-- /content -->
       

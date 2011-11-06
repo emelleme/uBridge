@@ -4,26 +4,33 @@ class Contacts_Controller extends ContentController {
     public function index($arguments) {
         return $this->renderWith('ContactsPage');
     }
+
+    private function getContact($sql) {
+        /* Returns contacts as json string */
+        $r = new RestfulService($sql,$expiry = 3600);
+        $resp = $r->request();
+        $contacts = explode("\n",$resp->getBody());
+        $arr = array();
+
+        foreach($contacts as $key=>$contact){
+            if($key > 0){
+                $arr[$key] = explode(",",$contact);
+            }
+        }
+            
+        return json_encode($arr);             
+    }
     
     public function getAdministrativeContacts($arguments){
-    	/* Returns contacts as a json or array */
-    	$sql = 'https://www.google.com/fusiontables/api/query?sql=SELECT+*+FROM+2024373';
-		$r = new RestfulService($sql,$expiry = 3600);
-		$resp = $r->request();
-		$contacts = explode("\n",$resp->getBody());
-		foreach($contacts as $key=>$contact){
-			if($key > 0){
-				var_dump(explode(",",$contact));
-			}
-		}					
+    	echo $this->getContact('https://www.google.com/fusiontables/api/query?sql=SELECT+*+FROM+2024373');
     }
     
     public function getInvestigativeContacts($arguments){
-    	/* Returns contacts as a json or array */
+    	echo $this->getContact('https://www.google.com/fusiontables/api/query?sql=SELECT+*+FROM+2024091');
     }
     
     public function getPatrolContacts($arguments){
-    	/* Returns contacts as a json or array */
+    	echo $this->getContact('https://www.google.com/fusiontables/api/query?sql=SELECT+*+FROM+1842345');
     }
     
     function districts($arguments) {
