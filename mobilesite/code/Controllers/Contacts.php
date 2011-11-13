@@ -46,9 +46,6 @@ class Contacts_Controller extends ContentController {
         echo json_encode($arr);
     }
     
-    function districts($arguments) {
-        return $this->renderWith(array('MapsPage','DistrictMap'));
-    }
 }
  
 ?>

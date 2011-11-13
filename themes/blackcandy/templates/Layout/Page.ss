@@ -6,9 +6,9 @@
 </div>
 
 <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="MainMenu">
-	<li data-icon="arrow-r" id="NearestStation"><a href="#stations">Nearest Police Station</a></li>
-	<li data-icon="arrow-r" id="FindMyDistrict"><a href="#gmap">Find My District</a></li>
-	<li data-icon="arrow-r" id="SubmitTip"><a href="#tip">Submit a Tip</a></li>
-	<li data-icon="arrow-r" id="Surveillance"><a href="#surveillance">View Surveillance Videos</a></li>
-	<li data-icon="arrow-r" id="ContactDirectory"><a href="#contact">Contact Directory</a></li>
+	<li data-icon="arrow-r" id="NearestStation"><a href="map/stations" data-ajax="false">Nearest Police Station</a></li>
+	<li data-icon="arrow-r" id="FindMyDistrict"><a href="map/districts" data-ajax="false">Find My District</a></li>
+	<li data-icon="arrow-r" id="SubmitTip"><a href="form/tip" data-ajax="false">Submit a Tip</a></li>
+	<li data-icon="arrow-r" id="Surveillance"><a href="media/surveillance" data-ajax="false">View Surveillance Videos</a></li>
+	<li data-icon="arrow-r" id="ContactDirectory"><a href="contact" data-ajax="false">Contact Directory</a></li>
 </ul>

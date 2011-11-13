@@ -34,27 +34,48 @@
     <% require javascript(mobilesite/javascript/maps.js) %>
  	</head>
 <body>
-    <div id="gmap" data-role="page" data-theme="b">
+   <div id="stations" data-role="page" data-theme="b" data-add-back-btn="false">
+      <div data-role="header" id="Header">
+        <h1>PhillyPolice Mobile</h1>
+      </div><!-- /header -->
       
-      <div data-role="content">	
-		<div data-role="fieldcontain">
-			
-			<input type="search" name="password" id="search" value="" />
-			<div><fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain"> 
-				 	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-				 	<label for="radio-choice-1">Show District</label>
+      <div id="PageTitle">
+        <h2>Nearest Police Station</h2>
+      </div>
 
-				 	<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
-				 	<label for="radio-choice-2">Nearest Station</label>
-			</fieldset></div>
-		</div>
-		
-		<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
-			<div id="map_canvas" style="height:300px;"></div>
-		</div>
-		
- 	</div><!-- content -->
- 
+      <div class="SearchContainer"> 
+          <fieldset class="ui-grid-a" id="SearchFieldSet">
+              <div class="ui-block-a">
+                <label for="StreetOrZipCode" class="ui-hidden-accessible">Street Address</label>
+                <input type="text" name="StreetOrZipCode" id="StreetOrZipCode"  placeholder="Street Address" />
+              </div>
+              <div class="ui-block-b"><img src="themes/blackcandy/images/button_location.png" alt="Search button" /> </div>
+          </fieldset>
+      </div>
+
+      <div class="map_canvas" style="height:300px;"></div>
+  </div><!-- /page -->
+  
+  <div id="gmap" data-role="page" data-theme="b" data-add-back-btn="false">
+      <div data-role="header" id="Header">
+        <h1>PhillyPolice Mobile</h1>
+      </div><!-- /header -->
+      
+      <div id="PageTitle">
+        <h2>Find My District</h2>
+      </div>
+
+      <div class="SearchContainer"> 
+          <fieldset class="ui-grid-a" id="SearchFieldSet">
+              <div class="ui-block-a">
+                <label for="StreetOrZipCode" class="ui-hidden-accessible">Street Address or Zip Code</label>
+                <input type="text" name="StreetOrZipCode" id="StreetOrZipCode"  placeholder="Street Address or Zip Code" />
+              </div>
+              <div class="ui-block-b"><img src="themes/blackcandy/images/button_location.png" alt="Search button" /> </div>
+          </fieldset>
+      </div>
+
+      <div class="map_canvas" style="height:300px;"></div>
   </div><!-- /page -->
 </body>
 </html>
