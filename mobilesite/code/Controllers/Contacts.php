@@ -11,7 +11,7 @@ class Contacts_Controller extends ContentController {
 
     private function getContact($sql) {
         /* Returns contacts as json string */
-        $r = new RestfulService($sql,$expiry = 3);
+        $r = new RestfulService($sql,$expiry = 3600);
         $resp = $r->request();
         $contacts = explode("\n",$resp->getBody());
         $arr = array();
