@@ -17,6 +17,7 @@
 	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+  <% require themedCSS(phillymobile) %>
 </head>
 <body>
 <div id="tip" data-role="page" data-theme="b" data-add-back-btn="false">

@@ -30,15 +30,11 @@
       </div>
 
       <div data-role="content">
-
-        <div class="content-primary" data-theme="d" data-content-theme="b" id="ContactList">
-			<ul data-role="listview" data-theme="b">
-				<li>
+			<ul data-role="listview" data-theme="c" data-dividertheme="b">
+				<!--<li>
 					<h3>Uniform Patrol Contacts</h3>
-
 					<ul data-role="listview" data-filter="true">
 						<li>
-
 							<div data-role="collapsible" data-theme="d" data-content-theme="b">
 								<h3>1st District</h3>
 								<div class="AddressBlock">
@@ -56,37 +52,15 @@
 									</div>
 								</div>
 							</div>
-
-						</li>
-						<li>
-
-							<div data-role="collapsible" data-theme="d" data-content-theme="b">
-								<h3>2nd District</h3>
-								<div class="AddressBlock">
-									<h4>Address</h4>
-									<p>24th and Wolf Streets</p>
-								</div>
-								<div class="AddressBlock">
-									<div class="ui-grid-a">
-									<div class="ui-block-a"><h4>Phone</h4></div>
-									<div class="ui-block-b"><h4>Email</h4></div>
-									</div>
-									<div class="ui-grid-a">
-									<div class="ui-block-a">215.686.3010</div>
-									<div class="ui-block-b">police.co_01@phila.gov</div>
-									</div>
-								</div>
-							</div>
-
 						</li>
 					</ul>
-				</li>
-				<li>
-				<h3>Investigative Units</h3>
-				
-				<ul data-role="listview" data-filter="true">
-						<li>
+				</li> -->
+				$PatrolContactsAsHTML
 
+				<li>
+					<h3>Investigative Units</h3>				
+					<ul data-role="listview" data-filter="true">
+						<li>
 							<div data-role="collapsible" data-theme="d" data-content-theme="b">
 								<h3>Central Detective Division</h3>
 								<div class="AddressBlock">
@@ -104,16 +78,14 @@
 									</div>
 								</div>
 							</div>
-
 						</li>
 					</ul>
 				</li>
-				<li>
-				<h3>Administrative Services</h3>
 				
-				<ul data-role="listview" data-filter="true">
+				<li>
+					<h3>Administrative Services</h3>
+					<ul data-role="listview" data-filter="true">
 						<li>
-
 							<div data-role="collapsible" data-theme="d" data-content-theme="b">
 								<h3>Victim Services</h3>
 								<div class="AddressBlock">
@@ -131,13 +103,11 @@
 									</div>
 								</div>
 							</div>
-
 						</li>
 					</ul>
 				</li>
-			</ul>
-		</div>
-            
+			</li>
+		</ul>        
     </div> <!-- /content -->
       
   </div><!-- /page -->

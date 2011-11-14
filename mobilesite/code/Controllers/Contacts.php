@@ -1,13 +1,13 @@
 <?php
- /* Maps Controller */
+ /* Contacts Controller */
 class Contacts_Controller extends ContentController {
     public function index($arguments) {
         return $this->renderWith('ContactsPage');
     }
 
     private $ADMIN_URL = 'https://www.google.com/fusiontables/api/query?sql=SELECT+*+FROM+2024373';
-    private $INVESTIGATIVE_URL = 'https://www.google.com/fusiontables/api/query?sql=SELECT+UNIT,ADDRESS,EMAIL,TELEPHONE+FROM+2024091';
-    private $PATROL_URL = 'https://www.google.com/fusiontables/api/query?sql=SELECT+UNIT,ADDRESS,EMAIL,PHONE+FROM+1842345';
+    private $INVESTIGATIVE_URL = 'https://www.google.com/fusiontables/api/query?sql=SELECT+UNIT,ADDRESS,TELEPHONE,EMAIL+FROM+2024091';
+    private $PATROL_URL = 'https://www.google.com/fusiontables/api/query?sql=SELECT+UNIT,ADDRESS,PHONE,EMAIL+FROM+1842345';
 
     private function getContact($sql) {
         /* Returns contacts as json string */
@@ -45,7 +45,43 @@ class Contacts_Controller extends ContentController {
 
         echo json_encode($arr);
     }
-    
+
+    public function PatrolContactsAsHTML() {
+        $html = '<li>
+                    <h3>Uniform Patrol Contacts</h3>                
+                    <ul data-role="listview" data-filter="true">';
+        $contacts = $this->getContact($this->PATROL_URL);
+        foreach($contacts as $key=>$contact){
+            
+            // very weird - can't access this way: $contact[2]
+
+            $html .= '<li>
+                            <div data-role="collapsible" data-theme="d" data-content-theme="b">
+                                <h3>' . current($contact) . '</h3>
+                                <div class="AddressBlock">
+                                    <h4>Address</h4>
+                                    <p>' . next($contact) . '</p>
+                                </div>';
+            next($contact);
+            next($contact);
+            
+            $html .=            '<div class="AddressBlock">
+                                    <div class="ui-grid-a">
+                                    <div class="ui-block-a"><h4>Phone</h4></div>
+                                    <div class="ui-block-b"><h4>Email</h4></div>
+                                    </div>
+                                    <div class="ui-grid-a">
+                                    <div class="ui-block-a">' . next($contact) . '</div>
+                                    <div class="ui-block-b">' . next($contact) . '</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>';
+        }
+        $html .= '</ul></li>';    
+        return $html;
+    }
+
 }
  
 ?>
