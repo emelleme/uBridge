@@ -55,7 +55,7 @@
 						</li>
 					</ul>
 				</li> -->
-				$PatrolContactsAsHTML
+				$UniformPatrolContacts
 
 				<li>
 					<h3>Investigative Units</h3>				

@@ -11,13 +11,13 @@ class Contacts_Controller extends ContentController {
 
     private function getContact($sql) {
         /* Returns contacts as json string */
-        $r = new RestfulService($sql,$expiry = 3600);
+        $r = new RestfulService($sql,$expiry = 3);
         $resp = $r->request();
         $contacts = explode("\n",$resp->getBody());
         $arr = array();
 
         foreach($contacts as $key=>$contact){
-            if($key >= 0){
+            if($key >= 0 && $contact != ''){
                 $arr[$key] = explode(",",$contact);
             }
         }
@@ -44,6 +44,32 @@ class Contacts_Controller extends ContentController {
         $arr['patrol'] = $this->getContact($this->PATROL_URL);
 
         echo json_encode($arr);
+    }
+    
+    public function UniformPatrolContacts(){
+    	//Get Contacts
+    	$patrol = $this->getContact($this->PATROL_URL);
+    	//Returns Unit, Address, Phone, and Email
+    	$contacts = new DataObjectSet();
+		foreach($patrol as $key=>$value){
+			if($key > 0){
+				//Create DataObject array
+				$c = array(
+					"Unit" => $value[0],
+					"Address" => $value[1],
+					"Phone" => $value[2],
+					"Email" => $value[3]
+				);
+				//Push the data onto the DataObjectSet
+				$contacts->push(new ArrayData($c));
+			}
+		}
+    	//Now that we have our Data Set, we can send it to the template
+    	$dataForTemplate = array(
+    		"PatrolContacts" => $contacts
+		);
+		//var_dump($contacts);
+    	return $this->customise($dataForTemplate)->renderWith("UniformPatrolList");
     }
 
     public function PatrolContactsAsHTML() {
