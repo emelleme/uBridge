@@ -13,12 +13,12 @@ class Contacts_Controller extends ContentController {
         /* Returns contacts as json string */
         $r = new RestfulService($sql,$expiry = 3600);
         $resp = $r->request();
-        $contacts = explode("\n",$resp->getBody());
+        $contacts = str_getcsv($resp->getBody(), "\n");
         $arr = array();
 
         foreach($contacts as $key=>$contact){
             if($key >= 0 && $contact != ''){
-                $arr[$key] = explode(",",$contact);
+                $arr[$key] = str_getcsv($contact, ",");
             }
         }
             
@@ -47,7 +47,7 @@ class Contacts_Controller extends ContentController {
     }
 
     private function customiseDataForTemplate($url, $title) {
-        $fetchedContacts = $this->getContact($this->PATROL_URL);
+        $fetchedContacts = $this->getContact($url);
         //Returns Unit, Address, Phone, and Email
         $contacts = new DataObjectSet();
         foreach($fetchedContacts as $key=>$value){
