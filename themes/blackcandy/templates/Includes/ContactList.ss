@@ -1,8 +1,8 @@
 <li>
-	<h3>Uniform Patrol Contacts</h3>
-	<% if PatrolContacts %>
+	<h3>$ContactsTitle</h3>
+	<% if ContactsInfo %>
 	<ul data-role="listview" data-filter="true">
-		<% control PatrolContacts %>
+		<% control ContactsInfo %>
 		<li>
 			<div data-role="collapsible" data-theme="d" data-content-theme="b">
 				<h3>$Unit</h3>
