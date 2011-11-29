@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html lang="$ContentLocale" manifest="assets/mobile.appcache">
+<html lang="$ContentLocale">
   <head>
 		<% base_tag %>
-		<title><% if MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
+		<title>μBridge</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		
 
@@ -11,33 +11,33 @@
 		
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
-    <script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?sensor=true">
-	</script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/jsapi"></script>
+	<script type="text/javascript">
+   google.load("identitytoolkit", "1.0", {packages: ["mobile_ac"]});
+</script>
 	<style type="text/css">
 		  html { height: 100% }
 		  body { height: 100%; margin: 0; padding: 0 }
 		  #map_canvas { height: 800px; }
 		</style>
-    <% require themedCSS(phillymobile) %>
-
-    <% require javascript(http://code.jquery.com/jquery-1.6.4.min.js) %>
+    <% require themedCSS(ubridge) %>
     
-    <% require javascript(http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js) %>
-    <% require javascript(mobilesite/javascript/jquery.ui.map.js) %>
-    <% require javascript(mobilesite/javascript/jquery.ui.map.min.js) %>
-    <% require javascript(mobilesite/javascript/jquery.ui.map.services.js) %>
-    <% require javascript(mobilesite/javascript/jquery.ui.map.extensions.js) %>
-    <% require javascript(mobilesite/javascript/maps.js) %>
+      <% require javascript(mobilesite/javascript/page.js) %>
  	</head>
 <body>
-    <div data-role="page" data-theme="b">
+    <div data-role="page" data-theme="e">
       <div data-role="header" id="Header">
-        <h1>PhillyPolice Mobile</h1>
+        <h1>μBridge.mobi</h1>
       </div><!-- /header -->
 
-      <div data-role="content" id="Layout"> 
-        $Layout    
+      <div data-role="content" id="home"> 
+		<a href="host" data-role="button" data-icon="event-host" data-iconpos="top" data-theme="c" data-ajax="false">Event/Venue Host</a>
+		
+		<a href="login" data-role="button" data-icon="event-guest" data-iconpos="top" data-theme="c">Event/Venue Guest</a>
+        $Form
       </div><!-- /content -->
       
       <div data-role="footer" id="Footer">
@@ -46,28 +46,21 @@
  
   </div><!-- /page -->
   
-  <div id="gmap" data-role="page" data-theme="b">
+  <div id="login" data-role="page" data-theme="e">
       <div data-role="header" id="Header">
-        <h1>PhillyPolice Map Search</h1>
+        <h1>μBridge.mobi</h1>
       </div><!-- /header -->
-      <div data-role="content">	
-		<div data-role="fieldcontain">
-			
-			<input type="search" name="password" id="search" value="" />
-			<div><fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain"> 
-				 	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-				 	<label for="radio-choice-1">Show District</label>
 
-				 	<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
-				 	<label for="radio-choice-2">Nearest Station</label>
-			</fieldset></div>
-		</div>
+      <div data-role="content" id="home"> 
+		<p>Sign-in below</p>
 		
-		<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
-			<div id="map_canvas" style="height:300px;"></div>
-		</div>
-		
- 	</div><!-- content -->
+		<a href="https://www.facebook.com/dialog/oauth?client_id=284986931522062&amp;scope=email,sms,offline_access,publish_stream,user_about_me,user_location&amp;redirect_uri=http://ubridge.mobi/login/go/&amp;response_type=code token"><img src="themes/blackcandy/img/fb-button.png"></a>
+        $Form
+      </div><!-- /content -->
+      
+      <div data-role="footer" id="Footer">
+          <h4>&copy; 2011.</h4>
+      </div><!-- /footer -->
  
   </div><!-- /page -->
 </body>

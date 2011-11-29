@@ -4,7 +4,7 @@ global $project;
 $project = 'mobilesite';
 
 global $database;
-$database = 'mobile_dev';
+$database = 'ubridge';
  
 // Use _ss_environment.php file for configuration
 require_once("conf/ConfigureFromEnv.php");
@@ -18,11 +18,16 @@ Security::setDefaultAdmin("admin","password1");
 
 Director::set_environment_type("dev");
 
+//Add Host Role
+DataObject::add_extension('Member', 'HostRole');
+DataObject::add_extension('Member', 'UserRole');
 /* URL Rules for Map View */
-Director::addRules(50, array('map/$Action/$ID' => 'Maps_Controller'));
-Director::addRules(50, array('contact/$Action/$Division/$Query' => 'Contacts_Controller'));
-Director::addRules(50, array('media/$Action/$ID' => 'Media_Controller'));
-Director::addRules(50, array('forms/$Action/$ID' => 'Forms_Controller'));
+Director::addRules(50, array('guest/$Action/$ID' => 'GuestLogin_Controller'));
+Director::addRules(50, array('host/$Action/$ID' => 'Host_Controller'));
+Director::addRules(50, array('event/$Action/$ID' => 'Event_Controller'));
+Director::addRules(50, array('login/$Action/$ID' => 'FacebookSignupPage_Controller'));
+Director::addRules(50, array('signup/$Action/$ID' => 'FacebookSignupPage_Controller'));
+
 // Set the site locale
 i18n::set_locale('en_US');
 

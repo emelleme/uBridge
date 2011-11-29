@@ -2,73 +2,69 @@
 
 <html lang="en-US">
   <head>
-		<base href="http://sexting.emelle.me/"><!--[if lte IE 6]></base><![endif]-->
-		<title>Page not found &raquo; Your Site Name</title>
-		<meta name="generator" content="SilverStripe - http://silverstripe.org" />
+		<base href="http://ubridge.mobi/"><!--[if lte IE 6]></base><![endif]-->
+		<title>μBridge</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+
+    <meta name="generator" content="SilverStripe - http://silverstripe.org" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
-		<link rel="shortcut icon" href="/favicon.ico" />
 		
-		 
-		 
-		 
-		
-		<!--[if IE 6]>
-			<style type="text/css">
-			 @import url(themes/blackcandy/css/ie6.css);
-			</style> 
-		<![endif]-->
-	<link rel="stylesheet" type="text/css" href="http://sexting.emelle.me/themes/blackcandy/css/layout.css?m=1271032378" />
-<link rel="stylesheet" type="text/css" href="http://sexting.emelle.me/themes/blackcandy/css/typography.css?m=1241147393" />
-<link rel="stylesheet" type="text/css" href="http://sexting.emelle.me/themes/blackcandy/css/form.css?m=1278978109" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/jsapi"></script>
+	<script type="text/javascript">
+   google.load("identitytoolkit", "1.0", {packages: ["mobile_ac"]});
+</script>
+	<style type="text/css">
+		  html { height: 100% }
+		  body { height: 100%; margin: 0; padding: 0 }
+		  #map_canvas { height: 800px; }
+		</style>
+    
+    
+      
+ 	<link rel="stylesheet" type="text/css" href="http://ubridge.mobi/themes/blackcandy/css/ubridge.css?m=1319706416" />
 </head>
 <body>
-	<div id="BgContainer">
-		<div id="Container">
-			<div id="Header">
-				
-		   		<h1>Your Site Name</h1>
-		    	<p>your tagline here</p>
-			</div>
-		
-			<div id="Navigation">
-				<ul>
- 		  
-  		<li><a href="/" title="Go to the Home page" class="link"><span>Home</span></a></li>
-   		  
-  		<li><a href="/about-us/" title="Go to the About Us page" class="link"><span>About Us</span></a></li>
-   		  
-  		<li><a href="/contact-us/" title="Go to the Contact Us page" class="link"><span>Contact Us</span></a></li>
-   	
- </ul>
-		  	</div>
-	  	
-		  	<div class="clear"><!-- --></div>
-		
-			<div id="Layout">
-			  <div class="typography">
-	
+    <div data-role="page" data-theme="e">
+      <div data-role="header" id="Header">
+        <h1>μBridge.mobi</h1>
+      </div><!-- /header -->
 
-	
-	
-		<h2>Page not found</h2>
-	
-		<p>Sorry, it seems you were trying to access a page that doesn't exist.</p><p>Please check the spelling of the URL you were trying to access and try again.</p>
+      <div data-role="content" id="home"> 
+		<a href="host" data-role="button" data-icon="event-host" data-iconpos="top" data-theme="c">Event/Venue Host</a>
 		
-		
-	
-</div>
-			</div>
-		
-		   <div class="clear"><!-- --></div>
-		</div>
-		<div id="Footer">
-			<div class="footerTop">
-	<!-- -->
-</div>
-<p>Copyright &copy; 2007-2008 | Powered by <a href="http://www.silverstripe.org" title="This site runs on the SilverStripe CMS">SilverStripe Open Source CMS</a></p>
+		<a href="login" data-role="button" data-icon="event-guest" data-iconpos="top" data-theme="c">Event/Venue Guest</a>
+        
+      </div><!-- /content -->
+      
+      <div data-role="footer" id="Footer">
+          <h4>&copy; 2011.</h4>
+      </div><!-- /footer -->
+ 
+  </div><!-- /page -->
+  
+  <div id="login" data-role="page" data-theme="e">
+      <div data-role="header" id="Header">
+        <h1>μBridge.mobi</h1>
+      </div><!-- /header -->
 
-		</div> 
-	</div>
-</body>
+      <div data-role="content" id="home"> 
+		<p>Sign-in below</p>
+		
+		<a href="https://www.facebook.com/dialog/oauth?client_id=284986931522062&amp;scope=email,sms,offline_access,publish_stream,user_about_me,user_location&amp;redirect_uri=http://ubridge.mobi/login/go/&amp;response_type=code token"><img src="themes/blackcandy/img/fb-button.png"></a>
+        
+      </div><!-- /content -->
+      
+      <div data-role="footer" id="Footer">
+          <h4>&copy; 2011.</h4>
+      </div><!-- /footer -->
+ 
+  </div><!-- /page -->
+<script type="text/javascript" src="http://ubridge.mobi/mobilesite/javascript/page.js?m=1319850326"></script></body>
 </html>

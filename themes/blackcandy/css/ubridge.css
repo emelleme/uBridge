@@ -1,0 +1,47 @@
+/*** custom styles ***/
+
+#Header {
+  padding: 10px 0 10px 0;
+}
+
+.ui-btn-icon-top .ui-btn-inner {
+padding-top: 120px;
+}
+.ui-btn-icon-top .ui-icon, .ui-btn-icon-bottom .ui-icon {
+position: absolute;
+left: 50%;
+margin-left: -50px;
+}
+
+.ui-icon-event-guest{
+	width: 100px;
+height: 100px;
+	background: none;
+	background-image: url(../images/foursquare-icon.png);
+	background-repeat: no-repeat;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+}
+
+.ui-icon-event-host{
+	width: 100px;
+height: 100px;
+	background: none;
+	background-image: url(../images/planner.png);
+	background-repeat: no-repeat;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+}
+
+.widget-panel-chooser {
+	width:100%;
+}
+.widget-header{
+	height:0px;
+	display:none;
+}
+widget-email-box {
+display:none;
+}

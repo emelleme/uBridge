@@ -3,12 +3,12 @@
 define('SS_ENVIRONMENT_TYPE', 'dev');
 
 global $_FILE_TO_URL_MAPPING;
-#$_FILE_TO_URL_MAPPING['/home/lloyd/mobi'] = 'http://mobi.phillypolice.com';
-$_FILE_TO_URL_MAPPING['/home/lloyd/mobi'] = 'http://localhost';
+$_FILE_TO_URL_MAPPING['/home/lloyd/mobi'] = 'http://ubridge.mobi';
+#$_FILE_TO_URL_MAPPING['/home/lloyd/mobi'] = 'http://localhost';
 /* Database connection */
 define('SS_DATABASE_SERVER', 'localhost');
 define('SS_DATABASE_USERNAME', 'root');
-define('SS_DATABASE_PASSWORD', '');
+define('SS_DATABASE_PASSWORD', 'd3v-ppd');
  
 /* Configure a default username and password to access the CMS on all sites in this environment. */
 define('SS_DEFAULT_ADMIN_USERNAME', 'admin');
