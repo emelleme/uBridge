@@ -1,0 +1,223 @@
+/*** custom styles ***/
+
+#Header {
+  padding: 10px 0 10px 0;
+  background-image: url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-color: #222;
+  text-indent: -9999px;
+  border: 0;
+}
+
+#MainMenu li {
+	background-color: #fff;
+	opacity: 1;
+	color: #999;
+	padding: 0 0 20px 40px;
+	height: 30px;
+	background-position: 10px 5px;
+	background-repeat: no-repeat;
+}
+
+#MainMenu li#NearestStation {
+	background-image: url(../images/icon_nearestpolicestation.png);
+}
+
+#MainMenu li#FindMyDistrict {
+	background-image: url(../images/icon_findmydistrict.png);
+}
+
+#MainMenu li#SubmitTip {
+	background-image: url(../images/icon_submitatip.png);
+}
+
+#MainMenu li#Surveillance {
+	background-image: url(../images/icon_surveillancevideos.png);
+}
+
+#MainMenu li#ContactDirectory {
+	background-image: url(../images/icon_contactdirectory.png);
+}
+
+#Layout {
+	background-color: #222;
+	background-image: url(../images/grungebackseamless.jpg);
+	padding: 10px;
+}
+
+#TweetBox {
+	background: #1C415B;
+	opacity: 0.95;
+	color: white;
+	text-shadow: none;
+	padding: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #999;
+}
+
+#TweetBox h3 {
+	font-size: 1.2em;
+	margin: 0;
+	position: relative;
+	top: -25px; left: -15px;
+}
+
+#TweetBox h3:before {
+	content: url(../images/twitterbird.png);
+	position: relative;
+	top: 5px; left: 5px;
+}
+
+#TweetBox p {
+	color: #ccc;
+	font-size: 0.8em;
+	padding: 0; 
+	margin: -15px 0 0 0;
+}
+
+#TweetBox p strong {
+	color: #fff;
+}
+
+#PageTitle {
+	background-image: url(../images/pagetitleback.jpg);
+	background-repeat: repeat-x;
+	padding: 2px 0 0 5px;
+	height: 30px;
+}
+
+#PageTitle h2 {
+	color: white;
+	text-shadow: none;
+	margin: 0;
+	font-size: 1.2em;
+	padding: 0 0 0 40px;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+
+.BlankPage {
+	background: #fff;
+	padding: 5px;
+}
+
+#Footer {
+	background: #1C415B;
+	border-bottom: 0;
+}
+
+.SearchContainer {
+	padding: 10px;
+}
+
+.SearchContainer .ui-input-text {
+	width: 90%;
+	background: #fff;
+	display: inline-block;
+}
+
+.SearchContainer .ui-input-search {
+	background-color: #fff;
+}
+
+.SearchContainer .ui-btn  {
+	display: inline-block;	
+}
+
+#SearchFieldSet .ui-block-a {
+	width: 75%;
+}
+
+#SearchFieldSet .ui-block-b {
+	width: 36px;
+	max-width: 25%;
+}
+
+#SearchFieldSet .ui-block-b img {
+	vertical-align: middle;
+	margin: 5px 0 0 10px;
+}
+
+#SearchFieldSet label.ui-hidden-accessible {
+	display: none;
+}
+
+
+/*** District search ***/
+
+#gmap h2 {
+	background-image: url(../images/icon_findmydistrict.png);
+}
+
+/** Submit a Tip **/
+#tip h2 {
+	background-image: url(../images/icon_submitatip.png);
+}
+
+#tip p {
+	font-size: 11px;
+}
+
+#TipForm label {
+	text-transform: uppercase;
+}
+
+#TipForm label.lowerCase {
+	text-transform: lowercase;
+	font-size: 11px;
+}
+
+
+#TipForm label strong {
+	color: red;
+	font-weight: bold;
+}
+
+#TipForm input, #TipForm textarea {
+	background: #fff;
+}
+
+/** surveillance videos **/
+
+#surveillance h2 {
+	background-image: url(../images/icon_surveillancevideos.png);
+}
+
+#SurveillanceVideoList li {
+	background: #fff;
+}
+
+#SurveillanceVideoList a {
+	white-space: normal;	
+}
+
+#SurveillanceVideoList li img {
+	margin: 10px 10px 0 10px;
+}
+
+#SurveillanceVideoList li a em {
+	color: #ccc;
+	font-size: 13px;
+	font-style: normal;
+	display: block;
+}
+
+/** Nearest stations **/
+#stations h2 {
+	background-image: url(../images/icon_nearestpolicestation.png);
+}
+
+/*** contact **/
+#contact h2 {
+	background-image: url(../images/icon_contactdirectory.png);
+}
+
+#ContactList h4 {
+	font-size: 13px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#ContactList p {
+	margin: 0 0 15px 0;
+}

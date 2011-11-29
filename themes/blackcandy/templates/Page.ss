@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="$ContentLocale">
   <head>
 		<% base_tag %>
 		<title>μBridge</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		
-
-    $MetaTags(false)
-		
+    $MetaTags(false)    
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
