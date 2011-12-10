@@ -34,12 +34,12 @@ class UserRole extends DataObjectDecorator {
 				
 			),
 			'has_many' => array(
-				'EventRSVPs' => 'Event',
-				'SessionRSVPs' => 'Session'
+				//'EventRSVPs' => 'Event',
+				//'SessionRSVPs' => 'EventSession'
 			),
 			'belongs_many_many' => array(
 				'Events' => 'Event',
-				'EventSessions' => 'Session'
+				'EventSessions' => 'EventSession'
 			),
 			'searchable_fields' => array(
 				
@@ -51,13 +51,5 @@ class UserRole extends DataObjectDecorator {
 		return $fields;
 	}
 	
-	function updateCMSFields(FieldSet &$fields) {
-		//$allForums = DataObject::get('Forum');
-		//$fields->removeByName('FirstName');
-		//$fields->removeByName('Surname');
-		//$fields->removeByName('PersonalDetails');
-		//$fields->removeByName('Password');
-		//$fields->removeByName('pin');
-		
-	}
+	
 }

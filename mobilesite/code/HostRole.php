@@ -26,26 +26,16 @@ class HostRole extends DataObjectDecorator {
 				'profilePicture' => 'Varchar(150)',
 				'language' => 'Varchar'
 			),
-			'has_one' => array(
-				
-			),
-			'has_many' => array(
-				'VerifiedAddresses' => 'Address'
-			),
 			'belongs_many_many' => array(
 				'Events' => 'Event',
-				'EventSessions' => 'Session'
-			),
-			'searchable_fields' => array(
-				
-			),
-			'indexes' => array(
-			),
+				'EventSessions' => 'EventSession'
+			)
 		);
+		
+		
 		
 		return $fields;
 	}
-	
 	function updateCMSFields(FieldSet &$fields) {
 		//$allForums = DataObject::get('Forum');
 		//$fields->removeByName('FirstName');
@@ -54,5 +44,6 @@ class HostRole extends DataObjectDecorator {
 		//$fields->removeByName('Password');
 		//$fields->removeByName('pin');
 		
-	}
+		}
+
 }

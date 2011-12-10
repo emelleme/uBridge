@@ -74,9 +74,17 @@ class Host_Controller extends ContentController {
 			$dmember->identifier = @$userinfo["identifier"];
 			$dmember->language = @$userinfo["language"];
 			$dmember->pin = $pin;
+			$dmember->addToGroupByCode('event-host','Event Hosts');
 			$memberid = $dmember->write();
+			
+			
 			$dmember->ID = $memberid;
+			
+			//Add User to Event Host Group
+			$dmember->addToGroupByCode('event-host','Event Hosts');
 			$dmember->logIn(TRUE);
+			var_dump($dmember);
+			exit;
 			Director::redirect('home');
 		}else{
 			//Member exists. log them in.

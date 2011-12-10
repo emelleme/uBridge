@@ -42,7 +42,14 @@ class Folder extends File {
 		$item = null;
 		foreach($parts as $part) {
 			if(!$part) continue; // happens for paths with a trailing slash
-			$item = DataObject::get_one("Folder", "\"Name\" = '$part' AND \"ParentID\" = $parentID");
+			$item = DataObject::get_one(
+				"Folder", 
+				sprintf(
+					"\"Name\" = '%s' AND \"ParentID\" = %d",
+					Convert::raw2sql($part), 
+					(int)$parentID
+				)
+			);
 			if(!$item) {
 				$item = new Folder();
 				$item->ParentID = $parentID;
@@ -70,7 +77,7 @@ class Folder extends File {
 		// First, merge any children that are duplicates
 		$duplicateChildrenNames = DB::query("SELECT \"Name\" FROM \"File\" WHERE \"ParentID\" = $parentID GROUP BY \"Name\" HAVING count(*) > 1")->column();
 		if($duplicateChildrenNames) foreach($duplicateChildrenNames as $childName) {
-			$childName = DB::getConn()->addslashes($childName);
+			$childName = Convert::raw2sql($childName);
 			// Note, we do this in the database rather than object-model; otherwise we get all sorts of problems about deleting files
 			$children = DB::query("SELECT \"ID\" FROM \"File\" WHERE \"Name\" = '$childName' AND \"ParentID\" = $parentID")->column();
 			if($children) {
@@ -177,10 +184,10 @@ class Folder extends File {
 		if(Member::currentUser()) $ownerID = Member::currentUser()->ID;
 		else $ownerID = 0;
 		
-		$filename = DB::getConn()->addslashes($this->Filename . $name);
+		$filename = Convert::raw2sql($this->Filename . $name);
 		if($className == 'Folder' ) $filename .= '/';
 
-		$name = DB::getConn()->addslashes($name);
+		$name = Convert::raw2sql($name);
 		
 		DB::query("INSERT INTO \"File\" 
 			(\"ClassName\", \"ParentID\", \"OwnerID\", \"Name\", \"Filename\", \"Created\", \"LastEdited\", \"Title\")

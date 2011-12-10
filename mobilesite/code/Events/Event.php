@@ -14,24 +14,30 @@ class Event extends Page {
 	public static $many_many = array(
 		'Messages' => 'uMessage',
 		'Attendees' => 'Member'
+		
 	);
 	
 	public static $has_one = array(
-		'Owner' => 'Member'
+		
 	);
 	
 	public static $has_many = array(
-		'Sessions' => 'Session'
+		'Sessions' => 'Session',
+		'Owner' => 'Member'
 	);
 	
 
 }
 /* Event Controller */
 class Event_Controller extends ContentController {
+	
+	/* add controllers for place verification, saving events, and rsvps
+
 	public function v($arguments){
 		//View Event
     	return $this->renderWith('EventViewPage');
     }
+    
     public function edit($arguments){
     	//Requires Permission Check
     	$params = $this->getURLParams();
@@ -41,6 +47,8 @@ class Event_Controller extends ContentController {
 		);
     	return $this->customise($data)->renderWith('EventEditPage');
     }
+    
+    
     public function search($arguments){
     
     	$member = Member::currentUser();
