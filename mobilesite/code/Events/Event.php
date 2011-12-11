@@ -31,7 +31,7 @@ class Event extends Page {
 /* Event Controller */
 class Event_Controller extends ContentController {
 	
-	/* add controllers for place verification, saving events, and rsvps
+	/* add controllers for place verification, saving events, and rsvps */
 
 	public function v($arguments){
 		//View Event
