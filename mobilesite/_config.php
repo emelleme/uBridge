@@ -10,10 +10,9 @@ $database = 'ubridge_3';
 require_once("conf/ConfigureFromEnv.php");
 
 MySQLDatabase::set_connection_charset('utf8');
-
+Object::add_extension("SiteTree", "FilesystemPublisher('cache/', 'html')");
 // This line set's the current theme. More themes can be
 // downloaded from http://www.silverstripe.org/themes/
-SSViewer::set_theme('blackcandy');
 Security::setDefaultAdmin("admin","password1");
 
 Director::set_environment_type("dev");
@@ -22,6 +21,7 @@ Director::set_environment_type("dev");
 DataObject::add_extension('Member', 'HostRole');
 DataObject::add_extension('Member', 'UserRole');
 /* URL Rules for Map View */
+Director::addRules(50, array('apps/$Action/$ID' => 'Page_Controller'));
 Director::addRules(50, array('guest/$Action/$ID' => 'GuestLogin_Controller'));
 Director::addRules(50, array('host/$Action/$ID' => 'Host_Controller'));
 Director::addRules(50, array('event/$Action/$ID' => 'Event_Controller'));

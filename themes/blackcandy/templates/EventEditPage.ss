@@ -10,33 +10,64 @@
     $MetaTags(false)
 		
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+    <% require themedCSS(jquery.mobile-1.0a4.1) %>
     
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/jsapi"></script>
-	<script type="text/javascript" src="mobilesite/mobiscroll/mobiscroll.js"></script>
-	<link rel="stylesheet" type="text/css" href="mobilesite/mobiscroll/mobiscroll.css">
+	<script type="text/javascript" src="/mobilesite/mobiscroll/mobiscroll-1.5.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="/mobilesite/mobiscroll/mobiscroll-1.5.2.css">
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 	
-	<script type="text/javascript" src="mobilesite/javascript/editevent.js"></script>
+	 <script src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"
+      type="text/javascript"></script>
+	<script type="text/javascript" src="/mobilesite/javascript/editevent.js"></script>
 	<style type="text/css">
 		  html { height: 100% }
 		  body { height: 100%; margin: 0; padding: 0 }
 		  #map_canvas { height: 800px; }
+		  
+		  #map_canvas {
+        height: 400px;
+        width: 600px;
+        margin-top: 0.6em;
+      }
 		</style>
     <% require themedCSS(ubridge) %>
  	</head>
 <body>
+<form action="event/saveData" method="GET" data-ajax="false">
     <div data-role="page" data-theme="e">
+    
+ 	
+ 	  <div data-role="header" id="Header">
+        <h1>Event Location</h1>
+      </div><!-- /header -->
+	<div data-role="content">	
+		<div data-role="fieldcontain">
+		  <input data-theme="none" name="venue" id="searchTextField" type="text" size="50" placeholder="Enter the venue name or address and city" />
+		  
+		</div>
+		
+		<div id="map_canvas"></div>
+		<div data-role="fieldcontain">
+			
+			<a href="saveData" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b">Event Date and Time</a>
+		</div>
+	</div>
+  </div><!-- /page -->
+  
+  
+<div id="saveData/$ID" data-role="page" data-theme="e">
     <% control EventInfo %>
       <div data-role="header" id="Header">
-        <h1>Edit $Title</h1>
+        <h1>Edit Event: <i>$Title</i></h1>
       </div><!-- /header -->
       <div data-role="content">	
 		<div data-role="fieldcontain">
 			<div>
-			<form action="eventEnd" method="GET">
+			
 			 	<div data-role="fieldcontain">
                     <label for="date1">Start Date</label>
                     <input type="text" name="date1" id="date1" class="mobiscroll" value="11/05/2011" />
@@ -63,15 +94,30 @@
 			</div>
 			
 			<div data-role="fieldcontain">
-			<div><button type="submit" data-theme="b">Save</button></div>
-		</div>
-			</form>
+				<button type="submit" data-theme="a">Save</button>
+			</div>
 			</div>
 			
-			<div>
+			
+		  	
+		</div>
+ 	</div><!-- content -->
+      
+      <div data-role="footer" id="Footer">
+          <h4>&copy; 2011.</h4>
+      </div><!-- /footer -->
+ 	<% end_control %>
+	
+</div>
+ </form> 
+  <div id="eventDetails" data-role="page" data-theme="e">
+      <div data-role="header" id="Header">
+        <h1>Event Details</h1>
+      </div><!-- /header -->
+      <div data-role="content">	
+		<div>
 			<ul data-role="listview" data-split-icon="plus" data-split-theme="d">
-		  	<li><a href="newMessage"><h3>uMessages</h3><p>A uMessages are pre-defined messages that you create and schedule to be sent to all Attendees using uBridge.</p></a>
-		  	<a href="newMessage" data-transition="slideup">Add a new uMessage</a>
+		  	<li><a href="newMessage"><h3>Venue Name</h3><p>1234 Hope St. Philly, PA</p></a>
 		  	</li>
 		  	</ul>
 		  	
@@ -87,62 +133,10 @@
 		  	</li>
 		  	</ul>
 		  	</div>
-		  	
-		</div>
- 	</div><!-- content -->
-      
-      <div data-role="footer" id="Footer">
-          <h4>&copy; 2011.</h4>
-      </div><!-- /footer -->
- 	<% end_control %>
-  </div><!-- /page -->
-  
-  <div id="newEvent" data-role="page" data-theme="b">
-      <div data-role="header" id="Header">
-        <h1>Creat a New Event</h1>
-      </div><!-- /header -->
-      <div data-role="content">	
-		<div data-role="fieldcontain">
-			<div><fieldset data-role="controlgroup" data-type="vertical" data-role="fieldcontain"> 
-				<h3 for="event-type">What type of Event?</h3><br />
-			 	<a href="newConference" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b">Conference</a>
-				 	
-			</fieldset></div>
-		</div>
 		
  	</div><!-- content -->
  </div>
- 
- 	<div id="newConference" data-role="page" data-theme="b">
-      <div data-role="header" id="Header">
-        <h1>New Conference Event</h1>
-      </div><!-- /header -->
-      <div data-role="content">	
-		<div data-role="fieldcontain">
-			<div>
-			<form action="eventStart" method="GET">
-			<fieldset data-role="controlgroup" data-type="vertical" data-role="fieldcontain"> 
-				<h3>Basic Information</h3>
-				<div data-role="fieldcontain">
-	         <h4>Event Name</h4>
-	         <input type="text" name="name" id="name" value=""  />
-			</div>
-
-			<div data-role="fieldcontain">
-			<h4>Summary</h4>
-			<textarea cols="40" rows="9" name="summary" id="textarea"></textarea>
-			<div><button type="submit" data-theme="a">Event Dates</button></div>
-			
-			</div>
-
-			</fieldset>
-			</form>
-			</div>
-		</div>
- 	</div><!-- content -->
- 
-  </div><!-- /page -->
-  
+ 	
   <div id="eventStart" data-role="page" data-theme="b">
       <div data-role="header" id="Header">
         <h1>New Conference Event</h1>

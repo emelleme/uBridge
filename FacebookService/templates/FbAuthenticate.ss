@@ -10,7 +10,7 @@
    //console.log(token.substring(1));
    $.get('/signup/saveAuthToken?token='+token.substring(1),function(data){
    	//console.log(data);
-   	window.location = "/event/search";
+   	window.location = "/home/apps";
    });
 });
    </script>

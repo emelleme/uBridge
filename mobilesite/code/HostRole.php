@@ -23,7 +23,7 @@ class HostRole extends DataObjectDecorator {
 				'identifier' => 'Varchar(150)',
 				'PhoneNumber' => 'Varchar',
 				'pin' => 'Varchar(5)',
-				'profilePicture' => 'Varchar(150)',
+				'photoUrl' => 'Varchar(150)',
 				'language' => 'Varchar'
 			),
 			'belongs_many_many' => array(

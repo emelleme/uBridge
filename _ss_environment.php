@@ -8,7 +8,7 @@ $_FILE_TO_URL_MAPPING['/home/lloyd/mobi'] = 'http://ubridge.mobi';
 /* Database connection */
 define('SS_DATABASE_SERVER', 'localhost');
 define('SS_DATABASE_USERNAME', 'root');
-define('SS_DATABASE_PASSWORD', 'd3v-ppd');
+define('SS_DATABASE_PASSWORD', 'd3v-Emelle');
  
 /* Configure a default username and password to access the CMS on all sites in this environment. */
 define('SS_DEFAULT_ADMIN_USERNAME', 'admin');

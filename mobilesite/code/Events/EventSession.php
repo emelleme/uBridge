@@ -1,5 +1,5 @@
 <?php
-class EventSession extends DataObject {
+class uEventSession extends DataObject {
 
 	public static $db = array(
 		'SessionName' => 'Varchar(100)',

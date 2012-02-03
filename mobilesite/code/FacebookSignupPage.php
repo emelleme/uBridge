@@ -48,7 +48,7 @@ class FacebookSignupPage_Controller extends Page_Controller {
 			Director::redirect('/');
 		}
 		if($member){
-			return $this->renderWith('EventSearchPage');
+			return $this->renderWith('AppPage');
 		}else{
 			//New Member! Get Member info and create record
 			if(!$token){
@@ -74,7 +74,7 @@ class FacebookSignupPage_Controller extends Page_Controller {
 			
 			//Todo: direct user to setup page
 			
-			return $this->renderWith('EventSearchPage');
+			return $this->renderWith('AppPage');
 			//var_dump((array) $user);
 			//var_dump($token);
 			//exit;

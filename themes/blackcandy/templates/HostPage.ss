@@ -33,7 +33,7 @@
       <div data-role="header" id="Header">
         <h1>Hello $FirstName!</h1>
       </div><!-- /header -->
-	<% end_control %>
+	
       <div data-role="content" id="Layout"> 
       	
       	<a href="newEvent" data-role="button" data-icon="plus" data-iconpos="right" data-theme="b">Create an Event</a>
@@ -41,11 +41,17 @@
       	<h1>My Events</h1>
       	
       	<ul data-role="listview" data-split-icon="gear" data-split-theme="d">
+      	<% if Events %>
+      	<li><a href="#"><h3>$EventTitle</h3></a>
+      	<a href="#" data-transition="slideup">Edit Event</a>
+      	</li>
+      	<% else %>
       	<li><a href="#"><h3>Verified Events will be listed Here</h3></a>
       	<a href="#" data-transition="slideup">Edit Event</a>
       	</li>
+      	<% end_if %>
       	</ul>
-		
+	<% end_control %>	
 		
         $Form
       </div><!-- /content -->
@@ -55,22 +61,26 @@
       </div><!-- /footer -->
  
   </div><!-- /page -->
-  
-  <div id="newEvent" data-role="page" data-theme="e">
+ 
+
+<form action="host/eventStart" method="GET" data-ajax="false">
+<div id="newEvent" data-role="page" data-theme="e">
+ 
       <div data-role="header" id="Header">
         <h1>Creat a New Event</h1>
       </div><!-- /header -->
-      <div data-role="content">	
+
+	<div data-role="content">	
 		<div data-role="fieldcontain">
 			<div><fieldset data-role="controlgroup" data-type="vertical" data-role="fieldcontain"> 
 				<h3 for="event-type">What type of Event?</h3><br />
 			 	<a href="newConference" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b">Conference</a>
 				 	
-			</fieldset></div>
+			</fieldset>
+			</div>
 		</div>
-		
- 	</div><!-- content -->
- </div>
+	</div><!-- content -->
+</div>
  
  	<div id="newConference" data-role="page" data-theme="e">
       <div data-role="header" id="Header">
@@ -79,35 +89,36 @@
       <div data-role="content">	
 		<div data-role="fieldcontain">
 			<div>
-			<form action="host/eventStart" method="GET" data-ajax="false">
-			<fieldset data-role="controlgroup" data-type="vertical" data-role="fieldcontain"> 
-				<h3>Basic Information</h3>
-				<div data-role="fieldcontain">
-	         <h4>Event Name</h4>
-	         <input type="text" name="name" id="name" value=""  />
-			</div>
-
-			<div data-role="fieldcontain">
-			<h4>Summary</h4>
-			<textarea cols="40" rows="9" name="summary" id="textarea"></textarea>
-			</div>
-			<div data-role="fieldcontain" data-theme="c">
-			<input type="checkbox" name="checkbox-0" id="checkbox-0" data-theme="e"/>
-		<label for="checkbox-0" data-theme="c">I agree to the Terms.</label>
-		</div>
-		
-		<div data-role="fieldcontain">
-			<div><button type="submit" data-theme="a">Create this Event!</button></div>
-		</div>
 			
-			</div>
+				<fieldset data-role="controlgroup" data-type="vertical" data-role="fieldcontain"> 
+					<h3>Basic Information</h3>
+					<div data-role="fieldcontain">
+			     <h4>Event Name</h4>
+			     <input type="text" name="name" id="name" placeholder="Enter the Event Name" value=""  />
+				</div>
 
-			</fieldset>
-			</form>
+				<div data-role="fieldcontain">
+					<h4>Summary</h4>
+					<textarea cols="40" rows="9" name="summary" id="textarea" placeholder="Enter the a brief summary for this event"></textarea>
+					</div>
+					<div data-role="fieldcontain" data-theme="c">
+					<input type="checkbox" name="checkbox-0" id="checkbox-0" data-theme="e"/>
+					<label for="checkbox-0" data-theme="c">I agree to the Terms.</label>
+					</div>
+		
+					<div data-role="fieldcontain">
+						<div><button type="submit" data-theme="a">Create this Event!</button></div>
+					</div>
+			
+				</div>
+
+				</fieldset>
+			
 			</div>
 		</div>
  	</div><!-- content -->
  
   </div><!-- /page -->
+</form>
 </body>
 </html>

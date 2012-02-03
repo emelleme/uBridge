@@ -6,7 +6,29 @@ class Page extends SiteTree {
 
 	public static $has_one = array(
 	);
+	
+	function allPagesToCache() {
+    $urls = array();
+    $pages = DataObject::get("SiteTree");
+     
+    // ignored page types
+    $ignored = array('UserDefinedForm');
+     
+    foreach($pages as $page) {
+        // check to make sure this page is not in the classname
+        if(!in_array($page->ClassName, $ignored)) {
+            $urls = array_merge($urls, (array)$page->subPagesToCache());
+        }
+    }
+     
+    return $urls;
+}
 
+function subPagesToCache() {
+        $urls = array();
+        $urls[] = $this->AbsoluteLink();
+        return $urls;
+    }
 }
 class Page_Controller extends ContentController {
 
@@ -30,12 +52,42 @@ class Page_Controller extends ContentController {
 
 	public function init() {
 		parent::init();
-
+		SSViewer::set_theme('preparev3');
 		// Note: you should use SS template require tags inside your templates 
 		// instead of putting Requirements calls here.  However these are 
 		// included so that our older themes still work
 		
 	}
+	
+	public function apps(){
+		return $this->renderWith('AppPage');
+	}
+	
+	function allPagesToCache() {
+            // Get each page type to define its sub-urls
+        $urls = array();
+ 
+        // memory intensive depending on number of pages
+        $pages = Subsite::get_from_all_subsites("SiteTree");
+ 
+        foreach($pages as $page) {
+        $urls = array_merge($urls, (array)$page->subPagesToCache());
+        }
+ 
+        return $urls;
+    }
+ 
+    function subPagesToCache() {
+        $urls = array();
+        $urls[] = $this->AbsoluteLink();
+        return $urls;
+    }
+ 
+    function pagesAffectedByChanges() {
+        $urls = $this->subPagesToCache();
+        if($p = $this->Parent) $urls = array_merge((array)$urls, (array)$p->subPagesToCache());
+        return $urls;
+    }
 	
 	public function updateMessages($arguments){
 		$v = $arguments->allParams();
